@@ -1,0 +1,42 @@
+## DO NOT CHANGE THE NAME OF THE FUNCTION.
+'''
+converts each point of form'Ax Ay' into a point of form (Ax, Ay)
+''''
+def to_tuple(x):
+    #
+    # YOUR CODE HERE
+    
+    c=[pos for pos, char in enumerate(x) if char == '-']
+    A=x.split(",")
+    a=[]
+    
+    if len(c)==0:
+        a.append(int(A[0][0]))
+        a.append(int(A[0][2]))
+    elif len(c)==1:
+        if c[0]>0:
+           
+            a.append(int(A[0][0]))
+            a.append(0-int(A[0][3]))
+        else:
+            
+            a.append(0-int(A[0][1]))
+            a.append(int(A[0][3]))
+    else:
+        a.append(0-int(A[0][1]))
+        a.append(0-int(A[0][4]))
+        
+            
+    x=tuple(a)
+    
+    
+         
+    #x1 = x.split()
+
+    #return (int(x1[0]), int(x1[1]))  
+
+    
+   
+    return tuple(x)
+    
+to_tuple('2 -3')
